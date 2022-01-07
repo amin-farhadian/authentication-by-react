@@ -1,0 +1,12 @@
+.custom-btn {
+  font-size: 14px;
+  width: 130px;
+}
+
+.custom-btn:disabled {
+  background-color: #dfdfdf !important;
+  color: #9f9f9f !important;
+  border-color: #dfdfdf !important;
+  pointer-events: none;
+  cursor: default;
+}

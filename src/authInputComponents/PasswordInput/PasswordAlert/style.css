@@ -1,0 +1,15 @@
+.custom-password-alert {
+  background-color: #feefb3;
+  color: #9f6000;
+  font-size: 13px;
+}
+
+.custom-password-alert i {
+  font-size: 18px;
+  margin-top: 7px;
+}
+
+.custom-password-alert p {
+  width: 88%;
+  margin-right: 13px;
+}

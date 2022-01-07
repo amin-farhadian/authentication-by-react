@@ -1,0 +1,5 @@
+#wrapper {
+    background: linear-gradient(to right, #21d4fd, #b721ff);
+    overflow-y: auto;
+    height: 100vh !important;
+  }

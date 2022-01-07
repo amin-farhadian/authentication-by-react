@@ -1,0 +1,35 @@
+html {
+  direction: rtl;
+}
+
+body {
+  text-align: right;
+}
+
+*,
+body {
+  font-family: "Vazir", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+li,
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+p {
+  margin: 0;
+}
+
+.font-13 {
+  font-size: 13px;
+}
+
+
+

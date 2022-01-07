@@ -1,0 +1,8 @@
+.gide-link {
+  font-size: 14px;
+  transition: 0.4s;
+}
+
+.gide-link:hover {
+  color: #6a7dfe !important;
+}

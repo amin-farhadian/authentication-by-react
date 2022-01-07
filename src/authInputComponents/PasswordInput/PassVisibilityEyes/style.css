@@ -1,0 +1,15 @@
+.eye {
+  left: 5px;
+  top: 13px;
+  cursor: pointer;
+}
+
+.eye i {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.4);
+  transition: 0.5s;
+}
+
+.eye i:hover {
+  color: #6a7dfe !important;
+}

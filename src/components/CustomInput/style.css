@@ -1,0 +1,19 @@
+.custom-input {
+  direction: rtl !important;
+  text-align: right !important;
+  border-bottom-width: 2px !important;
+  border-bottom-style: solid;
+  border-block-color: #999999;
+  font-size: 15px !important;
+  transition: 0.5s !important;
+}
+
+.custom-input:focus {
+  box-shadow: none !important;
+  border-bottom-color: #26a69a;
+}
+
+.custom-input:disabled {
+  background-color: inherit;
+  opacity: 0.5;
+}
