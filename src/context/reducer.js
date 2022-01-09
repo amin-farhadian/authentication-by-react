@@ -43,28 +43,28 @@ export const reducer = (state, action) => {
     case actionTypes.SIGIN_DUPLICATE_EMAIL_ERROR:
       return {
         ...state,
-        loginUser: getData(keys.LOGIN_USER),
+        loginUser: action.payload,
         alert: alertTypes.DUPLICATE_EMAIL,
       };
 
     case actionTypes.UNREGISTERED_EMAIL_ERROR:
       return {
         ...state,
-        loginUser: getData(keys.LOGIN_USER),
+        loginUser: action.payload,
         alert: alertTypes.NON_EXISTENT_ACCOUNT,
       };
 
     case actionTypes.LOGIN_PASSWORD_ERROR:
       return {
         ...state,
-        loginUser: getData(keys.LOGIN_USER),
+        loginUser: action.payload,
         alert: alertTypes.INCORRECT_PASSWORD,
       };
 
     case actionTypes.LOGIN_SUCCESS:
       return {
         ...state,
-        loginUser: getData(keys.LOGIN_USER),
+        loginUser: action.payload,
         alert: null,
       };
 
@@ -78,28 +78,28 @@ export const reducer = (state, action) => {
     case actionTypes.SEND_REC_CODE_ERROR:
       return {
         ...state,
-        loginUser: getData(keys.LOGIN_USER),
+        loginUser: action.payload,
         alert: alertTypes.SEND_REC_CODE_ERROR,
       };
 
     case actionTypes.WRONG_REC_CODE_ERROR:
       return {
         ...state,
-        loginUser: getData(keys.LOGIN_USER),
+        loginUser: action.payload,
         alert: alertTypes.INCORRECT_REC_CODE,
       };
 
     case actionTypes.CHANGE_PASSWORD_SUCCESS:
       return {
         ...state,
-        loginUser: getData(keys.LOGIN_USER),
+        loginUser: action.payload,
         alert: alertTypes.SUCCESSFUL_PASSWORD_CHANGE,
       };
 
     case actionTypes.LOGOUT:
       return {
         ...state,
-        loginUser: getData(keys.LOGIN_USER),
+        loginUser: [],
         alert: null,
       };
 
@@ -110,6 +110,6 @@ export const reducer = (state, action) => {
       };
 
     default:
-      return null;
+      return state;
   }
 };

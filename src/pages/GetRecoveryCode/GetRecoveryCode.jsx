@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { paths } from "../../router/getPaths";
+import { keys } from "../../storage/storagekeys";
 import {
   getSuccessfulRecCodeSendAction,
   getUnregisteredEmailErrorAction,
@@ -8,6 +9,7 @@ import {
   getWrongRecCodeErrorAction,
   getRemoveAlertAction,
 } from "../../context/getActionObj";
+import { getData } from "../../storage/authStorage";
 import {
   isEmailRegisteredBefore,
   getUserData,
@@ -82,7 +84,7 @@ export default function GetRecoveryCode() {
 
     // If the email was not already registered
     if (!isEmailRegisteredBefore(email)) {
-      dispatch(getUnregisteredEmailErrorAction());
+      dispatch(getUnregisteredEmailErrorAction(getData(keys.LOGIN_USER)));
 
       return;
     }
@@ -98,7 +100,7 @@ export default function GetRecoveryCode() {
 
       setRecCode(code);
     } else {
-      dispatch(getUnsuccessfulRecCodeSendAction());
+      dispatch(getUnsuccessfulRecCodeSendAction(getData(keys.LOGIN_USER)));
     }
   };
 
@@ -107,7 +109,7 @@ export default function GetRecoveryCode() {
 
     // if the recovery code that client entered was not equal to code that send to email
     if (inputs[inputIDs.REC_CODE] !== recCode) {
-      dispatch(getWrongRecCodeErrorAction());
+      dispatch(getWrongRecCodeErrorAction(getData(keys.LOGIN_USER)));
 
       return;
     }

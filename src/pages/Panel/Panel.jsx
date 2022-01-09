@@ -20,7 +20,7 @@ export default function Panel() {
 
   const logouteHandler = () => {
     updateLoginUser(null);
-    
+
     dispatch(getLogoutAction());
   };
 

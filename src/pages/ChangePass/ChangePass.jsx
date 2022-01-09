@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import useInputValueKeeper from "../../customHooks/useInputValueKeeper";
 import { inputIDs } from "../../authInputComponents/inputIDs";
+import { getData } from "../../storage/authStorage";
+import { keys } from "../../storage/storagekeys";
 import {
   useAuthStateContext,
   useAuthDispatcherContext,
@@ -85,7 +87,7 @@ export default function ChangePass() {
 
     updateLoginUser(null);
 
-    dispatch(getSuccessfulPasswordChangeAction());
+    dispatch(getSuccessfulPasswordChangeAction(getData(keys.LOGIN_USER)));
   };
 
   return (

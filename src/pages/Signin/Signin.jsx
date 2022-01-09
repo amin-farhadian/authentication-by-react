@@ -11,6 +11,7 @@ import {
   useAuthStateContext,
   useAuthDispatcherContext,
 } from "../../context/AuthContext";
+import { getData } from "../../storage/authStorage";
 import {
   getDuplicateEmailErrorAction,
   getSuccessfulSiginAction,
@@ -68,7 +69,7 @@ export default function Signin() {
     e.preventDefault();
 
     if (isEmailRegisteredBefore(inputs[inputIDs.EMAIL])) {
-      dispatch(getDuplicateEmailErrorAction());
+      dispatch(getDuplicateEmailErrorAction(getData(keys.LOGIN_USER)));
       return;
     }
 
@@ -89,7 +90,7 @@ export default function Signin() {
     isFormReset && setIsFormReset(false);
 
     let removeAlert = null;
-    
+
     if (alert) {
       removeAlert = setTimeout(() => {
         dispatch(getRemoveAlertAction());

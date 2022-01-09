@@ -2,10 +2,12 @@ import { useEffect, useLayoutEffect, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import useInputValueKeeper from "../../customHooks/useInputValueKeeper";
 import { inputIDs } from "../../authInputComponents/inputIDs";
+import { keys } from "../../storage/storagekeys";
 import {
   useAuthStateContext,
   useAuthDispatcherContext,
 } from "../../context/AuthContext";
+import { getData } from "../../storage/authStorage";
 import {
   getRemoveAlertAction,
   getSuccessfulLoginAction,
@@ -90,7 +92,7 @@ export default function Login() {
 
     // If the email was not already registered
     if (!isEmailRegisteredBefore(inputs[inputIDs.EMAIL])) {
-      dispatch(getUnregisteredEmailErrorAction());
+      dispatch(getUnregisteredEmailErrorAction(getData(keys.LOGIN_USER)));
 
       return;
     }
@@ -99,7 +101,7 @@ export default function Login() {
 
     // If the password was incorrect
     if (data.password !== inputs[inputIDs.PASSWORD]) {
-      dispatch(getLoginPasswordErrorAction());
+      dispatch(getLoginPasswordErrorAction(getData(keys.LOGIN_USER)));
 
       setIsPasswordStyleInvalid(true);
 
@@ -108,8 +110,8 @@ export default function Login() {
 
     // if everything was ok
     updateLoginUser(data);
-    
-    dispatch(getSuccessfulLoginAction());
+
+    dispatch(getSuccessfulLoginAction(getData(keys.LOGIN_USER)));
   };
 
   return (

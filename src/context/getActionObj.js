@@ -1,9 +1,9 @@
 import { actionTypes } from "./reducer";
 
-export const getDuplicateEmailErrorAction = () => {
+export const getDuplicateEmailErrorAction = (loginUser) => {
   return {
     type: actionTypes.SIGIN_DUPLICATE_EMAIL_ERROR,
-    payload: null,
+    payload: loginUser,
   };
 };
 
@@ -14,24 +14,24 @@ export const getSuccessfulSiginAction = () => {
   };
 };
 
-export const getSuccessfulLoginAction = () => {
+export const getSuccessfulLoginAction = (loginUser) => {
   return {
     type: actionTypes.LOGIN_SUCCESS,
-    payload: null,
+    payload: loginUser,
   };
 };
 
-export const getLoginPasswordErrorAction = () => {
+export const getLoginPasswordErrorAction = (loginUser) => {
   return {
     type: actionTypes.LOGIN_PASSWORD_ERROR,
-    payload: null,
+    payload: loginUser,
   };
 };
 
-export const getUnregisteredEmailErrorAction = () => {
+export const getUnregisteredEmailErrorAction = (loginUser) => {
   return {
     type: actionTypes.UNREGISTERED_EMAIL_ERROR,
-    payload: null,
+    payload: loginUser,
   };
 };
 
@@ -42,24 +42,24 @@ export const getSuccessfulRecCodeSendAction = (user) => {
   };
 };
 
-export const getUnsuccessfulRecCodeSendAction = () => {
+export const getUnsuccessfulRecCodeSendAction = (loginUser) => {
   return {
     type: actionTypes.SEND_REC_CODE_ERROR,
-    payload: null,
+    payload: loginUser,
   };
 };
 
-export const getWrongRecCodeErrorAction = () => {
+export const getWrongRecCodeErrorAction = (loginUser) => {
   return {
     type: actionTypes.WRONG_REC_CODE_ERROR,
-    payload: null,
+    payload: loginUser,
   };
 };
 
-export const getSuccessfulPasswordChangeAction = () => {
+export const getSuccessfulPasswordChangeAction = (loginUser) => {
   return {
     type: actionTypes.CHANGE_PASSWORD_SUCCESS,
-    payload: null,
+    payload: loginUser,
   };
 };
 
