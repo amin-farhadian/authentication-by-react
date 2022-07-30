@@ -19,7 +19,7 @@ export default function App() {
       <Routes>
         <Route path={paths.HOME} element={<Home />} />
 
-        <Route path={paths.PANEL} element={<PanelRoute />}>
+        <Route element={<PanelRoute />}>
           <Route path={paths.PANEL} element={<Panel />} />
         </Route>
 
@@ -29,7 +29,7 @@ export default function App() {
 
         <Route path={paths.GET_RECOVERY_CODE} element={<GetRecoveryCode />} />
 
-        <Route path={paths.CHANGE_PASS} element={<ChangePassRoute />}>
+        <Route element={<ChangePassRoute />}>
           <Route path={paths.CHANGE_PASS} element={<ChangePass />} />
         </Route>
 
