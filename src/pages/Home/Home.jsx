@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { paths } from "../../router/getPaths";
 import MainLayout from "../../Layout/MainLayout";
 import "./style.css";
@@ -6,14 +6,13 @@ import "./style.css";
 export default function Home() {
   return (
     <MainLayout>
-      <div className="col-12">
-        <h2>صفحه ی اصلی</h2>
+      <div className="d-flex justify-content-center align-items-center">
         <ul>
           <li>
-            <Link to={paths.SIGNIN}>ثبت نام</Link>
+            <NavLink className="px-5 py-3" to={paths.SIGNIN}>ثبت نام</NavLink>
           </li>
           <li>
-            <Link to={paths.PANEL}>پنل کاربری</Link>
+            <NavLink className="px-5 py-3" to={paths.PANEL}>پنل کاربری</NavLink>
           </li>
         </ul>
       </div>
